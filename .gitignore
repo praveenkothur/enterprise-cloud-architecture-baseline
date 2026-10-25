@@ -10,3 +10,9 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# Python lab artifacts
+app/.venv/
+__pycache__/
+*.pyc
+
