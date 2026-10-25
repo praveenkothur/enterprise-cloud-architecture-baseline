@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700">
+<rect width="1100" height="700" fill="#ffffff"/>
+<text x="550" y="38" font-family="Arial" font-size="26" text-anchor="middle" font-weight="bold">AWS Enterprise Checkout Reference Architecture</text>
+<g font-family="Arial" font-size="16" text-anchor="middle">
+<rect x="390" y="65" width="320" height="52" rx="10" fill="#f3f6fa" stroke="#40566f"/><text x="550" y="96">Customers / HTTPS</text>
+<path d="M550 117 V145" stroke="#40566f" stroke-width="2"/><polygon points="544,139 550,149 556,139" fill="#40566f"/>
+<rect x="340" y="150" width="420" height="55" rx="10" fill="#fff1d6" stroke="#a86a00"/><text x="550" y="183">Route 53 → CloudFront + WAF</text>
+<path d="M550 205 V233" stroke="#40566f" stroke-width="2"/><polygon points="544,227 550,237 556,227" fill="#40566f"/>
+<rect x="380" y="238" width="340" height="52" rx="10" fill="#fff1d6" stroke="#a86a00"/><text x="550" y="269">Application Load Balancer</text>
+<rect x="70" y="315" width="960" height="335" rx="16" fill="#f6f9fc" stroke="#315b7d" stroke-width="2"/>
+<text x="95" y="343" text-anchor="start" font-weight="bold">VPC | private workload and data tiers across AZs</text>
+<path d="M550 290 V365" stroke="#40566f" stroke-width="2"/><polygon points="544,359 550,369 556,359" fill="#40566f"/>
+<rect x="110" y="380" width="260" height="78" rx="10" fill="#dceeff" stroke="#27628a"/><text x="240" y="412">ECS Fargate / EKS</text><text x="240" y="435" font-size="13">Private app subnets</text>
+<rect x="420" y="380" width="260" height="78" rx="10" fill="#dceeff" stroke="#27628a"/><text x="550" y="412">RDS / Aurora</text><text x="550" y="435" font-size="13">Multi-AZ database</text>
+<rect x="730" y="380" width="260" height="78" rx="10" fill="#dceeff" stroke="#27628a"/><text x="860" y="412">ElastiCache / SQS</text><text x="860" y="435" font-size="13">Cache and messaging</text>
+<path d="M370 419 H415 M680 419 H725" stroke="#40566f" stroke-width="2"/><polygon points="409,413 419,419 409,425" fill="#40566f"/><polygon points="719,413 729,419 719,425" fill="#40566f"/>
+<rect x="145" y="500" width="250" height="80" rx="10" fill="#e5f5e8" stroke="#34754a"/><text x="270" y="532">Secrets Manager + KMS</text><text x="270" y="554" font-size="13">Workload identity</text>
+<rect x="430" y="500" width="250" height="80" rx="10" fill="#e5f5e8" stroke="#34754a"/><text x="555" y="532">CloudWatch + CloudTrail</text><text x="555" y="554" font-size="13">Metrics, logs, audit</text>
+<rect x="715" y="500" width="250" height="80" rx="10" fill="#e5f5e8" stroke="#34754a"/><text x="840" y="532">S3 + cross-region copy</text><text x="840" y="554" font-size="13">Versioning and recovery</text>
+<text x="550" y="620" font-size="14">Narrow security groups • VPC endpoints • controlled egress • protected backups</text>
+</g></svg>
