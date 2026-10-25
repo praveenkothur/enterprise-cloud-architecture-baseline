@@ -1,0 +1,12 @@
+# Secrets and local files
+.env
+.env.*
+!.env.example
+*.tfstate
+*.tfstate.*
+.terraform/
+.venv/
+__pycache__/
+.DS_Store
+.vscode/
+.idea/

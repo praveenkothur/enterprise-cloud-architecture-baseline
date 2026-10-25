@@ -1,0 +1,19 @@
+provider,component,monthly_usd_estimate,unit_or_basis,assumption,confidence,validation_action
+AWS,Container compute,900,monthly,Multiple managed container replicas and variable load,Low,Price selected service and CPU-memory sizing in AWS calculator
+AWS,Load balancing and edge WAF,350,monthly,Moderate requests and WAF rules,Low,Model requests bandwidth and rules
+AWS,Relational database HA,1400,monthly,Production managed database with HA and storage,Low,Select engine class storage IOPS backup and HA mode
+AWS,Cache,250,monthly,Small managed replicated cache,Low,Select node type and replication
+AWS,Queue and events,100,monthly,Moderate asynchronous traffic,Low,Model requests retention and data transfer
+AWS,Object storage,120,monthly,Artifacts exports and lifecycle,Low,Model capacity requests and retrieval
+AWS,Network egress and endpoints,650,monthly,Controlled egress and private endpoints,Low,Measure cross-AZ cross-region and internet transfer
+AWS,Observability and security,700,monthly,Moderate logs metrics traces and audit retention,Low,Estimate ingestion GB and retention
+AWS,DR backup and replication,450,monthly,Cross-region copies and limited replication,Low,Select backup retention and replication mode
+Azure,Container compute,950,monthly,AKS node pools or managed container capacity,Low,Price selected service and node sizing in Azure calculator
+Azure,Edge and WAF,500,monthly,Front Door and regional ingress,Low,Model requests bandwidth and WAF rules
+Azure,Relational database HA,1350,monthly,Production managed database with HA and storage,Low,Select engine SKU storage backup and HA mode
+Azure,Cache,250,monthly,Managed cache option,Low,Validate current regional service availability and SKU
+Azure,Queue and events,100,monthly,Moderate asynchronous traffic,Low,Model operations throughput and retention
+Azure,Object storage,120,monthly,Artifacts exports and lifecycle,Low,Model capacity requests and redundancy
+Azure,Network egress and endpoints,700,monthly,Controlled egress and private endpoints,Low,Measure bandwidth and firewall processing
+Azure,Observability and security,750,monthly,Moderate logs metrics traces and audit retention,Low,Estimate ingestion GB and retention
+Azure,DR backup and replication,450,monthly,Cross-region copies and limited replication,Low,Select backup retention and replication mode

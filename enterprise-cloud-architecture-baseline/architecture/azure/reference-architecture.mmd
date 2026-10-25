@@ -1,0 +1,32 @@
+flowchart TB
+    U[Customers / Browsers] --> DNS[Azure DNS]
+    DNS --> EDGE[Azure Front Door + WAF]
+    EDGE --> AGW[Application Gateway WAF v2]
+    subgraph VNET["VNet - Primary Region"]
+      subgraph APP["Private application subnets - 3 zones"]
+        AKS[AKS or Azure Container Apps]
+        WORK[Async worker workloads]
+      end
+      subgraph DATA["Private data subnet / private endpoints"]
+        DB[(Azure SQL / PostgreSQL Flexible Server HA)]
+        CACHE[(Azure Managed Redis option)]
+      end
+      NAT[Azure NAT Gateway / controlled egress]
+      PE[Private Endpoints + Private DNS]
+      KV[Key Vault + Managed Identity]
+      MON[Azure Monitor + Log Analytics]
+      BUS[Service Bus]
+      OBJ[Blob Storage with versioning]
+      AKS --> DB
+      AKS --> CACHE
+      AKS --> BUS
+      WORK --> BUS
+      AKS --> KV
+      AKS --> PE
+      DB --> MON
+      AKS --> MON
+      WORK --> OBJ
+    end
+    AGW --> AKS
+    DB -. geo-backup / replica .-> DR[Recovery Region]
+    OBJ -. geo-redundancy / replication .-> DR
